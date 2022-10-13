@@ -1,5 +1,8 @@
-let astmeAlus = Number(prompt("Sisestage astme alus"));
-let astendaja = Number(prompt("Sisestage astendaja"));
+let Nimi = prompt("Sisesta oma nimi:");
+let lubatudKiirus = Number(prompt("Sisestage lubatud kiirus"));
+let tegelikKiirus = Number(prompt("Sisestage tegelik kiirus"));
 
-let vastus = Math.pow(astmeAlus,astendaja);
-console.log(vastus)
+let trahv = (tegelikKiirus - lubatudKiirus) *3;
+let tegelikTrahv = Math.min(trahv, 190);
+
+console.log(Nimi + ", kiiruse yletamise eest on Teie trahv " + tegelikTrahv);
