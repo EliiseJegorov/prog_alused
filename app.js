@@ -1,6 +1,7 @@
-let ainepunktid = Number(prompt("Sisestage ainepunktide arv"));
-let nadalad = Number(prompt("Sisestage nädalate arv"));
+let temperatuur = prompt("Sisestage õhutemperatuur");
 
-let tunnid = ainepunktid * 26;
-let nadalasToimetan = tunnid / nadalad;
-console.log("Ühe nädala eeldatav ajakulu:" + Math.round(nadalasToimetan) + " tundi.");
+if (temperatuur > 4.0) {
+    console.log("Ei ole jäätumise ohtu")
+} else {
+    console.log("On jäätumise oht")
+}
