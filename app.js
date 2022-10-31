@@ -1,20 +1,23 @@
-let valik = prompt("Kas soovite istekohta valida ise või loosiga?");
+let kirjaTeema = prompt('Sisestage kirja teema pealkiri:');
+let kirjaSuurus;
+let kirjaLisa;
 
-if(valik === "ise"){
-    console.log("Valisite ise");
-    let koht = prompt("Kas soovite istuda akna ääres või mitte?");
-    if(koht === "aken"){
-        console.log("Aknakoht");
-    } else {
-        console.log("Vahekäigukoht");
+function isFloat(value) {
+    if (
+        typeof value === 'number' &&
+        !Number.isNaN(value)
+    ) {
+        return true;
     }
+    return false;
 }
-else{
-    console.log("Istekoht loositi");
-    let toenaosus = Math.trunc(Math.ceil(Math.random()*3));
-    if(toenaosus === 1){
-        console.log("Aknakoht");
-    } else {
-        console.log("Vahekäigukoht");
-    }
+while (!isFloat(kirjaSuurus)){
+    kirjaSuurus = parseFloat(prompt('Sisestage kirja suurus:'))
 }
+while (kirjaLisa !== 'jah' && kirjaLisa !== 'ei'){
+    kirjaLisa = prompt('Kas kirjaga on kaasas fail?')
+}
+if(kirjaTeema.lenght ===0 || (kirjaLisa === 'jah' && kirjaSuurus > 1.0)){
+    console.log('Kiri on spämm.')
+}
+else console.log('Kiri ei ole spämm.');
